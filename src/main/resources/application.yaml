@@ -1,0 +1,50 @@
+
+server:
+  port: 8082
+
+spring:
+  application:
+    name: ms-order
+  datasource:
+    password: postgres
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/order-db
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+#
+#  kafka:
+#    producer:
+#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+#      properties:
+#        spring:
+#          json:
+#            type:
+#              mapping: decisiondtosend:com.group11.msdecide.model.dto.DecisionDto
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      bootstrap-servers: localhost:9092
+#    consumer:
+#      group-id: loanEventGroup
+#      properties:
+#        spring:
+#          json:
+#            type:
+#              mapping: loandto:com.group11.msdecide.model.dto.LoanDto
+#            trusted:
+#              packages: '*'
+#      enable-auto-commit: 'false'
+#      auto-offset-reset: earliest
+#      bootstrap-servers: localhost:9092
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
+
+
+logging:
+  level:
+    com: INFO
+
