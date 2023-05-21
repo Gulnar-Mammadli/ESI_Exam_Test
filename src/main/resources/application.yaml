@@ -16,31 +16,31 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
-#
-#  kafka:
-#    producer:
-#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-#      properties:
-#        spring:
-#          json:
-#            type:
-#              mapping: decisiondtosend:com.group11.msdecide.model.dto.DecisionDto
-#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-#      bootstrap-servers: localhost:9092
-#    consumer:
-#      group-id: loanEventGroup
-#      properties:
-#        spring:
-#          json:
-#            type:
-#              mapping: loandto:com.group11.msdecide.model.dto.LoanDto
-#            trusted:
-#              packages: '*'
-#      enable-auto-commit: 'false'
-#      auto-offset-reset: earliest
-#      bootstrap-servers: localhost:9092
-#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
+  kafka:
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring:
+          json:
+            type:
+              mapping: ordertosend:com.mammadli.msorder.dto.OrderDto
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      bootstrap-servers: localhost:9092
+    consumer:
+      group-id: loanEventGroup
+      properties:
+        spring:
+          json:
+            type:
+              mapping: orderdto:com.mammadli.msorder.dto.OrderDto
+            trusted:
+              packages: '*'
+      enable-auto-commit: 'false'
+      auto-offset-reset: earliest
+      bootstrap-servers: localhost:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
 
 
 
